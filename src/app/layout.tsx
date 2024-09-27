@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
- // Header component ka import
+import Header from "./components/Header/page";  // Header component ka import
+import About from "./components/About/page";  // About component ka import
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,8 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      
-        {children}
+        <About />  {/* About component render ho raha hai */}
+        <Header />  {/* Header component render ho raha hai */}
+        {children}  {/* Baaki pages ka content render hoga */}
       </body>
     </html>
   );
