@@ -1,8 +1,17 @@
+import Link from 'next/link'
 import React from 'react'
 
 const About = () => {
   return (
-    <div>About page</div>
+    <>
+    <h1>About Page</h1>
+    
+    <br /><br />
+   <Link href='/components/navbar'><b>Go to Nabar</b></Link>
+
+    
+    </>
+    
   )
 }
 
