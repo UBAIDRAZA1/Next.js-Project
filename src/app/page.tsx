@@ -3,19 +3,23 @@ import Link from 'next/link'
 import React from 'react'
 import { useRouter } from "next/navigation";
 import Card from './components/card/page';
+import Image from 'next/image';
 
 const Home = () => {
   const route = useRouter()
   return (
     <>
     <h1>Hello World</h1>
+
+    <Image src={'/image1.jpeg'}  alt='Image' width={200} height={200} ></Image>
+
     <br/><br/>
     <Link href='/components/about'><b>Go to About Page</b></Link>
    
-    <div>
+    <div className = 'w-40 h-20 ml-5 mt-10 pl-5 pt-1 rounded-lg text-black   bg-yellow-200' >
     <Card name='Asharib' rollno='2765' day='Tueday' />
     
-    {/* <Card name='Ubaid' rollno='2639' day='Wednesday' /> */}
+    <Card name='Ubaid' rollno='2639' day='Wednesday' />
     </div>
    <br /><br />
    
