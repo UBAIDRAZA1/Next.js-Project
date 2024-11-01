@@ -132,28 +132,27 @@ export default function Home() {
               <p className="text-lg">
                 Extensive Collection: Our carefully curated collection features books from various genres, including fiction, non-fiction, self-help, academic, and more. We regularly update our inventory to ensure you have access to the latest releases and hidden gems.
               </p>
-           
-
             </div>
           </div>
         </div>
-      </section><hr className="border-gray-700" />
+      </section>
+      <hr className="border-gray-700" />
 
       {/* Contact Section */}
       <section id="contact" className="p-10">
-        <h2 className="text-4xl font-bold mb-6">LET'S CONNECT</h2>
-        <form className="space-y-4 max-w-lg mx-auto">
-          <input className="w-full p-4 bg-gray-900 text-white rounded" type="text" placeholder="Name" />
-          <input className="w-full p-4 bg-gray-900 text-white rounded" type="email" placeholder="Email" />
-          <input className="w-full p-4 bg-gray-900 text-white rounded" type="text" placeholder="Subject" />
-          <textarea className="w-full p-4 bg-gray-900 text-white rounded" placeholder="Message"></textarea>
-          <button className="bg-lime-500 px-6 py-2 rounded-full w-full">SUBMIT</button>
-        </form>
+        <h2 className="text-4xl font-bold mb-6">CONTACT</h2>
+        <p className="text-lg">Feel free to reach out through the following methods:</p>
+        <ul className="mt-4 space-y-2 text-lg">
+          <li>Email: ubaid@example.com</li>
+          <li>Phone: +92-300-1234567</li>
+          <li>LinkedIn: <Link href="https://www.linkedin.com/in/ubaid-raza">Ubaid Raza</Link></li>
+        </ul>
       </section>
+      <hr className="border-gray-700" />
 
       {/* Footer */}
       <footer className="p-6 text-center">
-        <p>© 2024 Ubaid Raza</p>
+        <p>&copy; 2024 Ubaid Raza. All Rights Reserved.</p>
       </footer>
     </div>
   );
