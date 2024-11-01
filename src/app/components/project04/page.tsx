@@ -27,8 +27,8 @@ export default function Home() {
           </p>
           <div className="flex justify-center md:justify-start space-x-4 mt-6">
             <button className="bg-lime-500 px-6 py-2 rounded-full">Contact Me</button>
-            <a href="#" className="text-white">in</a>
-            <a href="https://github.com/UBAIDRAZA1" className="text-white">GitHub</a>
+            <a href="#" className="text-white">LinkedIn</a>
+            <a href="https://github.com/UBAIDRAZA1" target="_blank" rel="noopener noreferrer" className="text-white">GitHub</a>
             <a href="#" className="text-white">Instagram</a>
           </div>
         </div>
@@ -40,8 +40,8 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="p-10">
-        <h2 className="text-3xl font-bold mb-6"><u>ABOUT ME</u></h2>
-        <div className="bg-gray-900 p-6 rounded-xl space-y-10 grid grid-cols-1 md:grid-cols- gap-6 text-center md:text-left">
+        <h2 className="text-3xl font-bold mb-6 underline">ABOUT ME</h2>
+        <div className="bg-gray-900 p-6 rounded-xl space-y-10 grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left">
           <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
             <div className="md:w-1/2 flex justify-center md:justify-start">
               <Image src="/image04.jpeg" alt="Web Development" width={450} height={450} className="rounded-xl" />
@@ -73,47 +73,44 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section><hr className="border-gray-700" />
+      </section>
+      <hr className="border-gray-700" />
 
-
+      {/* Education Section */}
       <section id="education" className="p-10">
-  <h2 className="text-3xl font-bold mb-6"><u>Educational Qualification</u></h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-    {/* Row 1 */}
-    <div className="bg-gray-900 p-6 rounded-xl">
-      <h3 className="text-lg font-bold">BS Software Engineering</h3>
-      <p>From Ilma University (to be continued)</p>
-    </div>
-    <div className="bg-gray-900 p-6 rounded-xl">
-      <h3 className="text-lg font-bold">Intermediate (Pre-Engineering)</h3>
-      <p>From Board of Intermediate Education, Karachi (2021 with B Grade)</p>
-    </div>
-    <div className="bg-gray-900 p-6 rounded-xl">
-      <h3 className="text-lg font-bold">Matriculation (Computer Science)</h3>
-      <p>From Board of Secondary Education, Karachi (2019 with A Grade)</p>
-    </div>
+        <h2 className="text-3xl font-bold mb-6 underline">Educational Qualification</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+          <div className="bg-gray-900 p-6 rounded-xl">
+            <h3 className="text-lg font-bold">BS Software Engineering</h3>
+            <p>From Ilma University (to be continued)</p>
+          </div>
+          <div className="bg-gray-900 p-6 rounded-xl">
+            <h3 className="text-lg font-bold">Intermediate (Pre-Engineering)</h3>
+            <p>From Board of Intermediate Education, Karachi (2021 with B Grade)</p>
+          </div>
+          <div className="bg-gray-900 p-6 rounded-xl">
+            <h3 className="text-lg font-bold">Matriculation (Computer Science)</h3>
+            <p>From Board of Secondary Education, Karachi (2019 with A Grade)</p>
+          </div>
+          <div className="bg-gray-900 p-6 rounded-xl">
+            <h3 className="text-lg font-bold">CIT Web Development</h3>
+            <p>From Institute of Business Management (IOBM), NAVTTC Program</p>
+          </div>
+          <div className="bg-gray-900 p-6 rounded-xl">
+            <h3 className="text-lg font-bold">Darse Nizami (Alim Course, 8 years)</h3>
+            <p>From Board of Kanzul Madaris Pakistan (5 years completed, ongoing)</p>
+          </div>
+          <div className="bg-gray-900 p-6 rounded-xl">
+            <h3 className="text-lg font-bold">Hifzul Quran ul Karim (Hafiz)</h3>
+            <p>From Madarsa tul Madina</p>
+          </div>
+        </div>
+      </section>
+      <hr className="border-gray-700" />
 
-    {/* Row 2 */}
-    <div className="bg-gray-900 p-6 rounded-xl">
-      <h3 className="text-lg font-bold">CIT Web Development</h3>
-      <p>From Institute of Business Management (IOBM), NAVTTC Program</p>
-    </div>
-    <div className="bg-gray-900 p-6 rounded-xl">
-      <h3 className="text-lg font-bold">Darse Nizami (Alim Course, 8 years)</h3>
-      <p>From Board of Kanzul Madaris Pakistan (5 years completed, ongoing)</p>
-    </div>
-    <div className="bg-gray-900 p-6 rounded-xl">
-      <h3 className="text-lg font-bold">Hifzul Quran ul Karim (Hafiz)</h3>
-      <p>From Madarsa tul Madina</p>
-    </div>
-  </div>       
-</section><hr className="border-gray-700" />
-
-
-    
       {/* Project Section */}
       <section id="project" className="p-10">
-        <h2 className="text-3xl font-bold mb-6"><u>PROJECT</u></h2>
+        <h2 className="text-3xl font-bold mb-6 underline">PROJECT</h2>
         <div className="bg-gray-900 p-6 rounded-xl space-y-10">
           <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
             <div className="md:w-1/2 flex justify-center md:justify-start">
@@ -122,7 +119,7 @@ export default function Home() {
             <div className="md:w-1/2 space-y-4">
               <h3 className="text-2xl font-bold">Website</h3>
               <p className="text-lg">
-                At urdu books, we believe in the transformative power of books. Our mission is to provide you with a diverse range of literary treasures, from timeless classics to the latest bestsellers. Whether you’re a passionate reader, a student seeking academic resources, or simply someone who loves to explore new genres, we’ve got something for everyone.
+                At Urdu Books, we believe in the transformative power of books. Our mission is to provide you with a diverse range of literary treasures, from timeless classics to the latest bestsellers. Whether you’re a passionate reader, a student seeking academic resources, or simply someone who loves to explore new genres, we’ve got something for everyone.
               </p>
             </div>
           </div>
@@ -135,6 +132,8 @@ export default function Home() {
               <p className="text-lg">
                 Extensive Collection: Our carefully curated collection features books from various genres, including fiction, non-fiction, self-help, academic, and more. We regularly update our inventory to ensure you have access to the latest releases and hidden gems.
               </p>
+           
+
             </div>
           </div>
         </div>

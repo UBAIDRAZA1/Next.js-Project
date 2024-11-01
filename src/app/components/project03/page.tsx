@@ -1,15 +1,14 @@
-'use client'
-import react, {useEffect, useState} from 'react';
+'use client';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
     const [data, setData] = useState(null);
-    useEffect ( ()=>{
+
+    useEffect(() => {
         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc")
-
-
-        .then((response) =>response.json())
-        .then((data) =>setData(data));
-    } ,[])
+            .then((response) => response.json())
+            .then((data) => setData(data));
+    }, []);
 
     return (
         <div>
@@ -17,8 +16,8 @@ export default function Home() {
             {data ? (
                 <pre>{JSON.stringify(data, null, 2)}</pre>
             ) : (
-                <p>Loding......</p>
-            ) }
+                <p>Loading...</p>
+            )}
         </div>
-    )
+    );
 }

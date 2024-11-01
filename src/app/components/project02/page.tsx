@@ -1,7 +1,6 @@
-
 "use client"; // We are handling interactions
 
-import React from 'react';
+import Image from 'next/image';
 
 export default function Page() {
   return (
@@ -33,10 +32,12 @@ export default function Page() {
           <h2 className="text-5xl mt-12 font-bold">Welcome to My Portfolio</h2>
           <p className="text-xl mt-4">I am a full-stack developer who loves building web apps.</p>
           {/* Image */}
-          <img
+          <Image
             src="/image.jpeg" // Replace with an image URL
             alt="Profile"
-            className="mx-auto mt-8 rounded-full w-48 h-48 object-cover"
+            className="mx-auto mt-8 rounded-full"
+            width={192}
+            height={192}
           />
         </div>
       </section>
