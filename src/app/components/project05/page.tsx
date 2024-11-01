@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image"; // Importing Next.js Image component
 
 const topSliderImages = ["/image04.jpeg", "/image05.jpeg", "/image06.jpeg"];
 
@@ -114,12 +115,14 @@ const Page: React.FC = () => {
                   onMouseLeave={() => handleMouseLeave(product.id)}
                 >
                   <div className="p-4 h-64 flex items-center justify-center overflow-hidden rounded-sm">
-                    <img
+                    <Image
                       src={isHovered[product.id] ? product.images[1] : product.images[0]}
                       alt={product.title}
                       className={`h-full w-full object-cover rounded-sm transition-transform duration-300 ${
                         isHovered[product.id] ? "scale-105" : "scale-100"
                       }`}
+                      width={240} // Specify width for the Image component
+                      height={240} // Specify height for the Image component
                     />
                   </div>
                   <div className="p-4">

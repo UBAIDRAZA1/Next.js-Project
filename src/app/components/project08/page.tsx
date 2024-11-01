@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image"; // Next.js ka Image component import karen
 
 const topSliderImages = ["/image04.jpeg", "/image05.jpeg", "/image06.jpeg"];
 
@@ -44,11 +45,10 @@ const Page: React.FC = () => {
   return (
     <div className="relative w-full">
       <div className="bg-gray-800 text-white text-center py-2 hover:text-white hover:font-bold">
-      Ubaid Raza Worldwide Shopping on All Orders Over SGD $200
+        Ubaid Raza Worldwide Shopping on All Orders Over SGD $200
       </div>
 
       <nav className="bg-white flex items-center justify-between p-4 shadow-md">
-        
         <div className="flex space-x-6">
           {["Bracelet Watches", "Band Watches", "Perfumes", "Earbuds"].map((item, index) => (
             <a
@@ -101,10 +101,12 @@ const Page: React.FC = () => {
                 onMouseLeave={() => handleMouseLeave(product.id)}
               >
                 <div className="p-4 h-64 flex items-center justify-center overflow-hidden rounded-sm">
-                  <img
+                  <Image
                     src={isHovered[product.id] ? product.images[1] : product.images[0]}
                     alt={product.title}
-                    className={`h-full w-full object-cover rounded-sm transition-transform duration-300 ${
+                    layout="fill"
+                    objectFit="cover"
+                    className={`rounded-sm transition-transform duration-300 ${
                       isHovered[product.id] ? "scale-105" : "scale-100"
                     }`}
                   />

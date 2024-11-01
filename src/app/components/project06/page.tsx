@@ -1,9 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
+// Define a Product type
+type Product = {
+  id: number;
+  title: string;
+  price: string;
+  reviews: string;
+  images: string[];
+};
+
 const topSliderImages = ["/image04.jpeg", "/image05.jpeg", "/image06.jpeg"];
 
-const product1 = [
+const product1: Product[] = [
   { id: 1, title: "Cheetah Cappuccino Case", price: "$100.00", reviews: "0 reviews", images: ["/image04.jpeg", "/image05.jpeg"] },
   { id: 2, title: "Leopard Sleeve", price: "$95.00", reviews: "0 reviews", images: ["/image13.jpeg", "/image06.jpeg"] },
   { id: 3, title: "Leopard AirPods Case", price: "$60.00", reviews: "0 reviews", images: ["/image09.jpeg", "/image10.jpeg"] },
@@ -12,7 +21,7 @@ const product1 = [
   { id: 6, title: "Charging Pad", price: "$40.00", reviews: "3 reviews", images: ["/image12.jpeg", "/image11.jpeg"] }
 ];
 
-const product2 = Array.from({ length: 14 }, (_, i) => ({
+const product2: Product[] = Array.from({ length: 14 }, (_, i) => ({
   id: i + 7,
   title: `Product 2 - Item ${i + 7}`,
   price: `$${(i + 7) * 10}.00`,
@@ -20,7 +29,7 @@ const product2 = Array.from({ length: 14 }, (_, i) => ({
   images: ["/image07.jpeg", "/image08.jpeg"]
 }));
 
-const product3 = Array.from({ length: 10 }, (_, i) => ({
+const product3: Product[] = Array.from({ length: 10 }, (_, i) => ({
   id: i + 21,
   title: `Product 3 - Item ${i + 21}`,
   price: `$${(i + 21) * 10}.00`,
@@ -71,7 +80,7 @@ const Page: React.FC = () => {
     setIsHovered((prev) => ({ ...prev, [id]: false }));
   };
 
-  const renderProducts = (products, scrollIndex) => (
+  const renderProducts = (products: Product[], scrollIndex: number) => (
     <div className="relative flex items-center mt-4 overflow-hidden">
       <div
         className="flex transition-transform duration-500"
@@ -79,9 +88,9 @@ const Page: React.FC = () => {
           transform: `translateX(-${scrollIndex * 210}px)`,
         }}
       >
-        {products.concat(products.slice(0, 6)).map((product, index) => (
+        {products.concat(products.slice(0, 6)).map((product) => (
           <div
-            key={index}
+            key={product.id} // Use product.id as key
             className={`text-center w-60 mx-2 border-[3px] rounded-lg overflow-hidden shadow-md transition-all duration-300 ${
               isHovered[product.id] ? "border-yellow-400 shadow-[0_0_15px_5px_rgba(255,215,0,0.7)] scale-105" : "border-gray-300"
             }`}
