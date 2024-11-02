@@ -2,38 +2,54 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image"; // Importing Next.js Image component
 
-const topSliderImages = ["/image04.jpeg", "/image05.jpeg", "/image06.jpeg"];
+const topSliderImages = ["/chain/image22.jpeg", "/patta/image11.jpeg", "/earbuds/image10.jpeg", "/perfume/image10.jpeg"];
 
 const products1 = [
-    { id: 1, title: "Original Earbuds ", price: "$20.00", reviews:"5000 reviews", images: ["/earbuds/image1.jpeg", "/earbuds/image11.jpeg"] },
-    { id: 2, title: "Original Earbuds", price: "$25.00", reviews: "3000 reviews", images: ["/earbuds/image2.jpeg", "/earbuds/image12.jpeg"] },
-    { id: 3, title: "Original Earbuds", price: "$28.00", reviews: "6000 reviews", images: ["/earbuds/image3.jpeg", "/earbuds/image13.jpeg"] },
-    { id: 4, title: "Original Earbuds", price: "$35.00", reviews: "4560 reviews", images: ["/earbuds/image4.jpeg", "/earbuds/image14.jpeg"] },
-    { id: 5, title: "Original Earbuds", price: "$30.00", reviews: "8750 reviews", images: ["/earbuds/image5.jpeg", "/earbuds/image15.jpeg"] },
-    { id: 6, title: "Original Earbuds", price: "$40.00", reviews: "4000 reviews", images: ["/earbuds/image6.jpeg", "/earbuds/image16.jpeg"] },
-    { id: 7, title: "Original Earbuds", price: "$34.00", reviews: "2000 reviews", images: ["/earbuds/image7.jpeg", "/earbuds/image17.jpeg"] },
-    { id: 8, title: "Original Earbuds", price: "$42.00", reviews: "5000 reviews", images: ["/earbuds/image8.jpeg", "/earbuds/image18.jpeg"] },
-    { id: 9, title: "Original Earbuds", price: "$37.00", reviews: "4900 reviews", images: ["/earbuds/image9.jpeg", "/earbuds/image19.jpeg"] },
-    { id:10, title: "Original Earbuds", price: "$46.00", reviews: "6040 reviews", images: ["/earbuds/image10.jpeg", "/earbuds/image20.jpeg"] }
-  ];
+    { id: 1, title: "Original Earbuds ", price: "$20.00", reviews:"5000 reviews", images: ["/chain/image1.jpeg", "/chain/image14.jpeg"] },
+    { id: 2, title: "Original Earbuds", price: "$25.00", reviews: "3000 reviews", images: ["/chain/image2.jpeg", "/chain/image15.jpeg"] },
+    { id: 3, title: "Original Earbuds", price: "$28.00", reviews: "6000 reviews", images: ["/chain/image3.jpeg", "/chain/image16.jpeg"] },
+    { id: 4, title: "Original Earbuds", price: "$35.00", reviews: "4560 reviews", images: ["/chain/image4.jpeg", "/chain/image17.jpeg"] },
+    { id: 5, title: "Original Earbuds", price: "$30.00", reviews: "8750 reviews", images: ["/chain/image5.jpeg", "/chain/image18.jpeg"] },
+    { id: 6, title: "Original Earbuds", price: "$40.00", reviews: "4000 reviews", images: ["/chain/image6.jpeg", "/chain/image19.jpeg"] },
+    { id: 7, title: "Original Earbuds", price: "$34.00", reviews: "2000 reviews", images: ["/chain/image7.jpeg", "/chain/image20.jpeg"] },
+    { id: 8, title: "Original Earbuds", price: "$42.00", reviews: "5000 reviews", images: ["/chain/image8.jpeg", "/chain/image21.jpeg"] },
+    { id: 9, title: "Original Earbuds", price: "$37.00", reviews: "4900 reviews", images: ["/chain/image9.jpeg", "/chain/image22.jpeg"] },
+    { id:10, title: "Original Earbuds", price: "$46.00", reviews: "6040 reviews", images: ["/chain/image10.jpeg", "/chain/image23.jpeg"] },
+    { id:11, title: "Original Earbuds", price: "$42.00", reviews: "5000 reviews", images: ["/chain/image11.jpeg", "/chain/image24.jpeg"] },
+    { id:12, title: "Original Earbuds", price: "$37.00", reviews: "4900 reviews", images: ["/chain/image12.jpeg", "/chain/image25.jpeg"] },
+    { id:13, title: "Original Earbuds", price: "$46.00", reviews: "6040 reviews", images: ["/chain/image13.jpeg", "/chain/image26.jpeg"] }
+   ];
 
 const products2 = [
-    { id: 1, title: "Original Earbuds", price: "$20.00", reviews:"5000 reviews", images: ["/earbuds/image1.jpeg", "/earbuds/image11.jpeg"] },
-    { id: 2, title: "Original Earbuds", price: "$25.00", reviews: "3000 reviews", images: ["/earbuds/image2.jpeg", "/earbuds/image12.jpeg"] },
-    { id: 3, title: "Original Earbuds", price: "$28.00", reviews: "6000 reviews", images: ["/earbuds/image3.jpeg", "/earbuds/image13.jpeg"] },
-    { id: 4, title: "Original Earbuds", price: "$35.00", reviews: "4560 reviews", images: ["/earbuds/image4.jpeg", "/earbuds/image14.jpeg"] },
-    { id: 5, title: "Original Earbuds", price: "$30.00", reviews: "8750 reviews", images: ["/earbuds/image5.jpeg", "/earbuds/image15.jpeg"] },
-    { id: 6, title: "Original Earbuds", price: "$40.00", reviews: "4000 reviews", images: ["/earbuds/image6.jpeg", "/earbuds/image16.jpeg"] },
-    { id: 7, title: "Original Earbuds", price: "$34.00", reviews: "2000 reviews", images: ["/earbuds/image7.jpeg", "/earbuds/image17.jpeg"] },
-    { id: 8, title: "Original Earbuds", price: "$42.00", reviews: "5000 reviews", images: ["/earbuds/image8.jpeg", "/earbuds/image18.jpeg"] },
-    { id: 9, title: "Original Earbuds", price: "$37.00", reviews: "4900 reviews", images: ["/earbuds/image9.jpeg", "/earbuds/image19.jpeg"] },
-    { id:10, title: "Original Earbuds", price: "$46.00", reviews: "6040 reviews", images: ["/earbuds/image10.jpeg", "/earbuds/image20.jpeg"] },
-    { id:11, title: "Original Earbuds", price: "$42.00", reviews: "5000 reviews", images: ["/earbuds/image8.jpeg", "/earbuds/image18.jpeg"] },
-    { id:12, title: "Original Earbuds", price: "$37.00", reviews: "4900 reviews", images: ["/earbuds/image9.jpeg", "/earbuds/image19.jpeg"] },
-    { id:13, title: "Original Earbuds", price: "$46.00", reviews: "6040 reviews", images: ["/earbuds/image10.jpeg", "/earbuds/image20.jpeg"] }
-  ];
+    { id: 1, title: "Original Earbuds", price: "$20.00", reviews: "5000 reviews", images: ["/patta/image1.jpeg", "/patta/image11.jpeg"] },
+    { id: 2, title: "Original Earbuds", price: "$25.00", reviews: "3000 reviews", images: ["/patta/image2.jpeg", "/patta/image12.jpeg"] },
+    { id: 3, title: "Original Earbuds", price: "$28.00", reviews: "6000 reviews", images: ["/patta/image3.jpeg", "/patta/image13.jpeg"] },
+    { id: 4, title: "Original Earbuds", price: "$35.00", reviews: "4560 reviews", images: ["/patta/image4.jpeg", "/patta/image14.jpeg"] },
+    { id: 5, title: "Original Earbuds", price: "$30.00", reviews: "8750 reviews", images: ["/patta/image5.jpeg", "/patta/image15.jpeg"] },
+    { id: 6, title: "Original Earbuds", price: "$40.00", reviews: "4000 reviews", images: ["/patta/image6.jpeg", "/patta/image16.jpeg"] },
+    { id: 7, title: "Original Earbuds", price: "$34.00", reviews: "2000 reviews", images: ["/patta/image7.jpeg", "/patta/image17.jpeg"] },
+    { id: 8, title: "Original Earbuds", price: "$42.00", reviews: "5000 reviews", images: ["/patta/image8.jpeg", "/patta/image18.jpeg"] },
+    { id: 9, title: "Original Earbuds", price: "$37.00", reviews: "4900 reviews", images: ["/patta/image9.jpeg", "/patta/image19.jpeg"] },
+    { id:10, title: "Original Earbuds", price: "$46.00", reviews: "6040 reviews", images: ["/patta/image10.jpeg", "/patta/image20.jpeg"] },
+   ];
 
-  const products3 = [
+   const products3 = [
+    { id: 1, title: "Original Earbuds", price: "$20.00", reviews: "5000 reviews", images: ["/perfume/image1.jpeg", "/perfume/image14.jpeg"] },
+    { id: 2, title: "Original Earbuds", price: "$25.00", reviews: "3000 reviews", images: ["/perfume/image2.jpeg", "/perfume/image15.jpeg"] },
+    { id: 3, title: "Original Earbuds", price: "$28.00", reviews: "6000 reviews", images: ["/perfume/image3.jpeg", "/perfume/image16.jpeg"] },
+    { id: 4, title: "Original Earbuds", price: "$35.00", reviews: "4560 reviews", images: ["/perfume/image4.jpeg", "/perfume/image17.jpeg"] },
+    { id: 5, title: "Original Earbuds", price: "$30.00", reviews: "8750 reviews", images: ["/perfume/image5.jpeg", "/perfume/image18.jpeg"] },
+    { id: 6, title: "Original Earbuds", price: "$40.00", reviews: "4000 reviews", images: ["/perfume/image6.jpeg", "/perfume/image19.jpeg"] },
+    { id: 7, title: "Original Earbuds", price: "$34.00", reviews: "2000 reviews", images: ["/perfume/image7.jpeg", "/perfume/image20.jpeg"] },
+    { id: 8, title: "Original Earbuds", price: "$42.00", reviews: "5000 reviews", images: ["/perfume/image8.jpeg", "/perfume/image21.jpeg"] },
+    { id: 9, title: "Original Earbuds", price: "$37.00", reviews: "4900 reviews", images: ["/perfume/image9.jpeg", "/perfume/image22.jpeg"] },
+    { id:10, title: "Original Earbuds", price: "$46.00", reviews: "6040 reviews", images: ["/perfume/image10.jpeg", "/perfume/image23.jpeg"] },
+    { id:11, title: "Original Earbuds", price: "$42.00", reviews: "5000 reviews", images: ["/perfume/image11.jpeg", "/perfume/image24.jpeg"] },
+    { id:12, title: "Original Earbuds", price: "$37.00", reviews: "4900 reviews", images: ["/perfume/image12.jpeg", "/perfume/image25.jpeg"] },
+    { id:13, title: "Original Earbuds", price: "$46.00", reviews: "6040 reviews", images: ["/perfume/image13.jpeg", "/perfume/image26.jpeg"] },
+   ];
+
+  const products4 = [
     { id: 1, title: "Original Earbuds", price: "$20.00", reviews:"5000 reviews", images: ["/earbuds/image1.jpeg", "/earbuds/image11.jpeg"] },
     { id: 2, title: "Original Earbuds", price: "$25.00", reviews: "3000 reviews", images: ["/earbuds/image2.jpeg", "/earbuds/image12.jpeg"] },
     { id: 3, title: "Original Earbuds", price: "$28.00", reviews: "6000 reviews", images: ["/earbuds/image3.jpeg", "/earbuds/image13.jpeg"] },
@@ -52,6 +68,7 @@ const Page: React.FC = () => {
   const [scrollIndex1, setScrollIndex1] = useState(0);
   const [scrollIndex2, setScrollIndex2] = useState(0);
   const [scrollIndex3, setScrollIndex3] = useState(0);
+  const [scrollIndex4, setScrollIndex4] = useState(0);
   const [isHovered, setIsHovered] = useState<{ [key: number]: boolean }>({});
 
   useEffect(() => {
@@ -75,10 +92,15 @@ const Page: React.FC = () => {
       setScrollIndex3((prevIndex) => (prevIndex + 1) % products3.length);
     }, 3000);
 
+    const productInterval4 = setInterval(() => {
+      setScrollIndex4((prevIndex) => (prevIndex + 1) % products4.length);
+    }, 3000);
+
     return () => {
       clearInterval(productInterval1);
       clearInterval(productInterval2);
       clearInterval(productInterval3);
+      clearInterval(productInterval4);
     };
   }, []);
 
@@ -126,7 +148,7 @@ const Page: React.FC = () => {
       </div>
 
       {/* Product Sections */}
-      {[{ products: products1, title: "Product 1", scrollIndex: scrollIndex1 }, { products: products2, title: "Product 2", scrollIndex: scrollIndex2 }, { products: products3, title: "Product 3", scrollIndex: scrollIndex3 }].map((section, idx) => (
+      {[{ products: products1, title: "Product 1", scrollIndex: scrollIndex1 }, { products: products2, title: "Product 2", scrollIndex: scrollIndex2 }, { products: products3, title: "Product 3", scrollIndex: scrollIndex3 } , { products: products4, title: "Product 4", scrollIndex: scrollIndex4 }].map((section, idx) => (
         <div key={idx} className="container mx-auto py-10">
           <h2 className="text-3xl font-semibold text-center mb-4 hover:font-bold hover:shadow-golden transition duration-300">
             {section.title}

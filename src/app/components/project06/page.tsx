@@ -149,7 +149,7 @@ export default function Home() {
   id="project"
   className="p-10"
 >
-  <h2 className="text-3xl font-bold mb-6 underline">PROJECT</h2>
+  <h2 className="text-3xl font-bold mb-6 underline">PROJECT 01</h2>
   <div className="bg-gray-900 p-6 rounded-xl space-y-10">
     {/* Urdu Books Project */}
     <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
@@ -163,7 +163,7 @@ export default function Home() {
           accessible to everyone, fostering a love for reading in our community. Join us on this journey of
           knowledge and imagination.
         </p>
-        <a href="#" className="text-lime-500 underline hover:text-lime-400">View Project</a>
+        <a href="https://urdusharah.netlify.app" className="text-lime-500 underline hover:text-lime-400">View Project</a>
       </div>
     </div>
 
@@ -178,6 +178,51 @@ export default function Home() {
           Urdu Bazar provides a platform for book lovers to discover, buy, and sell Urdu literature. Our
           website is designed to connect readers with authors and publishers, promoting Urdu literature across
           the globe.
+        </p>
+        <a href="https://urdusharah.netlify.app" className="text-lime-500 underline hover:text-lime-400">View Project</a>
+      </div>
+    </div>
+  </div>
+</motion.section>
+
+
+<hr className="border-gray-700" />
+
+
+{/* Project Section */}
+<motion.section
+  initial={{ opacity: 0, x: -100 }}
+  animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 100 }}
+  transition={{ duration: 1, delay: isVisible ? 0 : 2 }}
+  exit={{ opacity: 0, x: 100 }}
+  id="project"
+  className="p-10"
+>
+  <h2 className="text-3xl font-bold mb-6 underline">PROJECT 02</h2>
+  <div className="bg-gray-900 p-6 rounded-xl space-y-10">
+    {/* Urdu Books Project */}
+    <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+      <div className="md:w-1/2 flex justify-center md:justify-start">
+        <Image src="/image14.png" alt="Web Design - Urdu Books" width={450} height={300} className="rounded-xl" />
+      </div>
+      <div className="md:w-1/2 space-y-4">
+        <h3 className="text-2xl font-bold">Classic Watches Collection: Chain and Leather Straps</h3>
+        <p className="text-lg">
+        Explore our refined collection of chain and leather strap watches, crafted for elegance and durability. Each watch combines timeless design with quality materials, offering a sophisticated style for any occasion. Choose your perfect fit—sleek chain or classic leather.
+        </p>
+        <a href="" className="text-lime-500 underline hover:text-lime-400">View Project</a>
+      </div>
+    </div>
+
+    {/* Urdu Bazar Project */}
+    <div className="flex flex-col md:flex-row-reverse space-y-6 md:space-y-0 md:space-x-6">
+      <div className="md:w-1/2 flex justify-center md:justify-end">
+        <Image src="/image15.png" alt="Web Design - Urdu Bazar" width={450} height={300} className="rounded-xl" />
+      </div>
+      <div className="md:w-1/2 space-y-4">
+        <h3 className="text-2xl font-bold">Exclusive Perfume & Earbuds Collection</h3>
+        <p className="text-lg">
+        Discover our selection of luxurious perfumes and high-quality earbuds. Our perfumes are crafted to leave a lasting impression with unique, captivating scents. Alongside, our earbuds offer crystal-clear sound and comfortable fit, perfect for music lovers and on-the-go professionals. Indulge in elegance and quality with every choice.
         </p>
         <a href="#" className="text-lime-500 underline hover:text-lime-400">View Project</a>
       </div>
