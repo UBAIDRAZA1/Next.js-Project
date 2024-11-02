@@ -246,7 +246,7 @@ export default function Home() {
   <h2 className="text-3xl font-bold mb-6 underline">CONTACT</h2>
   <div className="bg-gray-900 p-6 rounded-xl space-y-6">
     <p className="text-lg">
-      If you'd like to discuss a project or just want to say hi, feel free to reach out!
+      If you&apos;d like to discuss a project or just want to say hi, feel free to reach out!
     </p>
     <form className="space-y-4">
       <div>
