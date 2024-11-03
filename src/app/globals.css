@@ -42,6 +42,11 @@ body {
 .shadow-golden:hover {
   text-shadow: 0px 0px 5px rgba(255, 215, 0, 0.6);
 }
+.slider-image {
+  width: 100%; /* Width ko 100% karna */
+  height: auto; /* Height ko auto rakhna, aspect ratio maintain karne ke liye */
+  object-fit: cover; /* Image ko cover karne ke liye */
+}
 
 
 @layer base {
