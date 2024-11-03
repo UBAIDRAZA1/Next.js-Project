@@ -11,15 +11,15 @@ const topSliderImages = [
  "/perfume/image14.jpeg"
 ];
 
-const Slider = () => {
-  return (
-      <div className="slider">
-          {topSliderImages.map((image, index) => (
-              <img key={index} src={image} alt={`Slider Image ${index + 1}`} className="slider-image" />
-          ))}
-      </div>
-  );
-};
+// const Slider = () => {
+//   return (
+//       <div className="slider">
+//           {topSliderImages.map((image, index) => (
+//               <img key={index} src={image} alt={`Slider Image ${index + 1}`} className="slider-image" />
+//           ))}
+//       </div>
+//   );
+// };
 
 
 const products1 = [
