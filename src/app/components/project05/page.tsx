@@ -243,6 +243,13 @@ export default function Home() {
           </button>
         </form>
       </motion.section>
+      <hr className="border-gray-700" />
+
+{/* Footer */}
+<footer className="text-center p-6 bg-gray-900 text-gray-400">
+  <p>&copy; 2024 Ubaid Raza. All rights reserved.</p>
+</footer>
     </div>
+    
   );
 }
