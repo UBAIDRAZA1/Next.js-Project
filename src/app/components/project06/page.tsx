@@ -7,13 +7,13 @@ import { motion } from 'framer-motion';
 export default function Home() {
   const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible((prev) => !prev); // Toggle visibility every 5 seconds
-    }, 3000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIsVisible((prev) => !prev); // Toggle visibility every 5 seconds
+  //   }, 3000);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
+  //   return () => clearInterval(interval); // Cleanup interval on component unmount
+  // }, []);
 
   return (
     <div className="bg-black text-white min-h-screen">
