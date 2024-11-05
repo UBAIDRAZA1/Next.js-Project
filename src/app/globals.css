@@ -47,6 +47,14 @@ body {
   height: auto; /* Height ko auto rakhna, aspect ratio maintain karne ke liye */
   object-fit: cover; /* Image ko cover karne ke liye */
 }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
+}
 
 
 @layer base {
