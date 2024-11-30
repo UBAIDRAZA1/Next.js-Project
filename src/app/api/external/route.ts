@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 
+// External API URL
 const EXTERNAL_API_URL = "https://jsonplaceholder.typicode.com/posts";
+
+// Define a type for the error
+interface FetchError {
+  message: string;
+}
 
 export async function GET() {
   try {
@@ -24,12 +30,21 @@ export async function GET() {
       success: true,
       data,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Handle errors
+    if (error instanceof Error) {
+      // Only access message if error is an instance of Error
+      return NextResponse.json({
+        success: false,
+        message: "An error occurred while fetching data",
+        error: error.message,
+      });
+    }
+
+    // If error is not of type Error, handle it generically
     return NextResponse.json({
       success: false,
-      message: "An error occurred while fetching data",
-      error: error.message,
+      message: "An unknown error occurred",
     });
   }
 }

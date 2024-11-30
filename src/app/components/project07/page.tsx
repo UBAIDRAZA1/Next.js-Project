@@ -1,5 +1,5 @@
-"use client";
 import { useState, useEffect, FormEvent, CSSProperties } from "react";
+import Image from "next/image"; // Import Image from Next.js
 
 type Book = {
   id: number;
@@ -86,7 +86,13 @@ export default function Project07() {
       <ul style={styles.list}>
         {books.map((book) => (
           <li key={book.id} style={styles.listItem}>
-            <img src={book.imageUrl} alt={book.title} style={styles.image} />
+            <Image
+              src={book.imageUrl}
+              alt={book.title}
+              width={50}
+              height={50}
+              style={styles.image}
+            />
             <div>
               <strong>{book.title}</strong> by <em>{book.author}</em>{" "}
               <span style={{ color: book.available ? "green" : "red" }}>
