@@ -1,3 +1,4 @@
+'use client'; // Add this line at the top
 import { useState, useEffect, FormEvent, CSSProperties } from "react";
 import Image from "next/image"; // Import Image from Next.js
 
