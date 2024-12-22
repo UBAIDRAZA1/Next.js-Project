@@ -20,7 +20,7 @@ export default function Cart() {
       size: "L",
       quantity: 1,
       price: 99,
-      image: "/milestone2/sec.png", // Second image (fixed typo in file name)
+      image: "/milestone2/sec.png.png", // Second image (fixed typo in file name)
     },
   ];
 

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import Link from 'next/link';
+import Image from 'next/image';  // Import Image from Next.js
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,16 +29,15 @@ function Navbar() {
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img src="/milestone2/logo.png" alt="logo" />
+            {/* Use Image component for logo */}
+            <Image src="/milestone2/logo.png" alt="logo" width={150} height={50} />
             <span className="text-xl font-bold text-gray-700">Comforty</span>
           </div>
           {/* Cart */}
           <div className="relative hidden md:flex items-center">
             <Link href="/components/project12/cart">
-             
-                <FaShoppingCart size={30} className="text-gray-700" />
-                <span className="absolute top-0 right-0 bg-teal-600 text-white text-xs rounded-full px-1">4</span>
-             
+              <FaShoppingCart size={30} className="text-gray-700" />
+              <span className="absolute top-0 right-0 bg-teal-600 text-white text-xs rounded-full px-1">4</span>
             </Link>
           </div>
 
