@@ -30,7 +30,7 @@ function Navbar() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             {/* Use Image component for logo */}
-            <Image src="/milestone2/logo.png" alt="logo" width={150} height={50} />
+            <Image src="/milestone2/logo.png" alt="logo" width={45} height={14} />
             <span className="text-xl font-bold text-gray-700">Comforty</span>
           </div>
           {/* Cart */}

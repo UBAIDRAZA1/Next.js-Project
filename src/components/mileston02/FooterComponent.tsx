@@ -13,8 +13,8 @@ export default function Footer() {
               <Image 
                 src="/milestone2/logo.png" 
                 alt="logo" 
-                width={60}  // Set an appropriate width
-                height={18}  // Set an appropriate height
+                width={45}  // Set an appropriate width
+                height={14}  // Set an appropriate height
               />
               <h2 className="text-xl font-semibold text-gray-700">Comforty</h2>
             </div>
