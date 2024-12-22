@@ -1,6 +1,8 @@
 import { FaShippingFast, FaTags } from "react-icons/fa";
 import { CiCircleCheck } from "react-icons/ci";
 import { TbPlant } from "react-icons/tb";
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="font-sans">
@@ -23,10 +25,12 @@ export default function Home() {
         </div>
         {/* Image Box */}
         <div className="w-96 h-64 bg-white rounded-lg shadow-lg flex items-center justify-center">
-          <img
+          <Image
             src="/milestone2/chair.png" // Replace with your image path
             alt="Chair"
-            className="w-48 h-48 object-contain"
+            width={192}
+            height={192}
+            className="object-contain"
           />
         </div>
       </section>
@@ -35,7 +39,7 @@ export default function Home() {
         <h3 className="text-2xl font-semibold mb-8">
           What Makes Our Brand Different
         </h3>
-        <div className="flex justify-center text gap-6 text-teal-600">
+        <div className="flex justify-center gap-6 text-teal-600">
           <div className="flex-1 text-pretty p-4 max-w-[200px] bg-gray-100">
             <FaShippingFast className="text-teal-800 text-4xl mx-auto mb-4" />
             <h4 className="font-medium text-lg">Next day as standard</h4>
@@ -52,7 +56,7 @@ export default function Home() {
             <FaTags className="text-teal-800 text-4xl mx-auto mb-4" />
             <h4 className="font-medium text-lg">Unbeatable prices</h4>
             <p>
-              For our materials and quality, you won not find better prices
+              For our materials and quality, you won’t find better prices
               anywhere.
             </p>
           </div>
@@ -73,27 +77,33 @@ export default function Home() {
         </h3>
         <div className="flex flex-wrap justify-center gap-6">
           <div className="w-96 h-72 text-center">
-            <img
+            <Image
               src="/milestone2/Large.jpg"
               alt="Poplar suede sofa"
+              width={384}
+              height={288}
               className="rounded-lg shadow-lg mb-4"
             />
             <h4 className="font-medium text-lg">The Poplar suede sofa</h4>
             <p>$99.00</p>
           </div>
           <div className="w-52 h-36 text-center">
-            <img
+            <Image
               src="/milestone2/about.png"
               alt="The Dandy chair"
+              width={208}
+              height={144}
               className="rounded-lg shadow-lg mb-4"
             />
             <h4 className="font-medium text-lg">The Dandy chair</h4>
             <p>$99.00</p>
           </div>
           <div className="w-52 h-36 text-center">
-            <img
+            <Image
               src="/milestone2/about2.png"
               alt="The Dandy chair"
+              width={208}
+              height={144}
               className="rounded-lg shadow-lg mb-4"
             />
             <h4 className="font-medium text-lg">The Dandy chair</h4>

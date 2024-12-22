@@ -3,11 +3,6 @@ import { NextResponse } from "next/server";
 // External API URL
 const EXTERNAL_API_URL = "https://jsonplaceholder.typicode.com/posts";
 
-// Define a type for the error
-interface FetchError {
-  message: string;
-}
-
 export async function GET() {
   try {
     // Fetch data from external API

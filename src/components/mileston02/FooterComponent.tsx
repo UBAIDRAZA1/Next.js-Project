@@ -1,4 +1,5 @@
 import { FaTwitter, FaInstagram, FaPinterest, FaYoutube, FaFacebook } from "react-icons/fa";
+import Image from 'next/image';  // Import Image component
 
 export default function Footer() {
   return (
@@ -8,7 +9,13 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <div className="flex items-center space-x-2">
-              <img src="/milestone2/logo.png" alt="logo" />
+              {/* Replace img with Image component */}
+              <Image 
+                src="/milestone2/logo.png" 
+                alt="logo" 
+                width={150}  // Set an appropriate width
+                height={40}  // Set an appropriate height
+              />
               <h2 className="text-xl font-semibold text-gray-700">Comforty</h2>
             </div>
             <p className="text-gray-500 mt-2">

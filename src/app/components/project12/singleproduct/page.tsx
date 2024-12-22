@@ -1,5 +1,6 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Home() {
   const demoImages = [
@@ -16,9 +17,11 @@ export default function Home() {
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Product Image */}
         <div className="flex justify-center items-center">
-          <img
+          <Image
             src="/milestone2/chair2.png"
             alt="Library Stool Chair"
+            width={500}  // Adjust width and height as needed
+            height={500} // Adjust width and height as needed
             className="rounded-lg w-full max-w-sm object-cover"
           />
         </div>
@@ -58,10 +61,12 @@ export default function Home() {
               key={index}
               className="bg-white rounded-lg shadow-lg p-5 hover:shadow-xl transition"
             >
-              <img
+              <Image
                 src={image}
                 alt={`Demo Image ${index + 1}`}
-                className="rounded-lg w-full h-48 object-cover mb-4" // Adjusted image size
+                width={500}  // Adjust width and height as needed
+                height={500} // Adjust width and height as needed
+                className="rounded-lg w-full h-48 object-cover mb-4"
               />
               <h3 className="text-[#343A40] font-semibold text-sm mb-2">
                 Demo Product {index + 1}

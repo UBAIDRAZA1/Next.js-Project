@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { ShoppingCart } from 'lucide-react';
+import Image from 'next/image';
 
 export default function FeaturedProductComponent() {
   const products = [
@@ -12,12 +13,18 @@ export default function FeaturedProductComponent() {
 
   return (
     <div className='mt-8'>
-      
       <div className='flex flex-wrap mt-5'>
         {products.map((product, index) => (
           <Card key={index} className='border-none shadow-none m-2 flex-1 min-w-[200px] max-w-[300px]'>
             <CardContent>
-              <img src={product.image} alt={product.name} className="w-full" />
+              {/* Using Image component from next/image for optimized image loading */}
+              <Image 
+                src={product.image} 
+                alt={product.name} 
+                width={500}  // Adjust width as needed
+                height={500} // Adjust height as needed
+                className="w-full" 
+              />
             </CardContent>
             <CardFooter>
               <div className="flex flex-col items-start">

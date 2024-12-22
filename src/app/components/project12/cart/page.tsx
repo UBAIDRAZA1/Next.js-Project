@@ -1,9 +1,8 @@
 import { FaRegHeart } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import Image from "next/image"; // Importing Image from next/image
+
 export default function Cart() {
-  
-
-
   const cartItems = [
     {
       id: 1,
@@ -18,10 +17,10 @@ export default function Cart() {
       id: 2,
       name: "Library Stool Chair",
       description: "Ashen Slate/Cobalt Bliss",
-      size: "l",
+      size: "L",
       quantity: 1,
       price: 99,
-      image: "/milestone2/sec.png.png", // Second image
+      image: "/milestone2/sec.png", // Second image (fixed typo in file name)
     },
   ];
 
@@ -40,11 +39,13 @@ export default function Cart() {
                 className="flex flex-col md:flex-row items-center bg-white p-4 rounded-lg shadow-md"
               >
                 {/* Product Image */}
-                <div className="w-32 h-32 flex-shrink-0">
-                  <img
+                <div className="w-32 h-32 flex-shrink-0 relative">
+                  <Image
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover rounded-md"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-md"
                   />
                 </div>
 
@@ -58,15 +59,14 @@ export default function Cart() {
                     <p>Size: {item.size}</p>
                     <p>Quantity: {item.quantity}</p>
                   </div>
-                
 
                   {/* Wishlist and Delete Below */}
                   <div className="flex space-x-4 mt-2">
                     <button className="text-gray-500 hover:text-teal-500">
-                    <FaRegHeart />
+                      <FaRegHeart />
                     </button>
                     <button className="text-gray-500 hover:text-red-500">
-                    <RiDeleteBin5Line />
+                      <RiDeleteBin5Line />
                     </button>
                   </div>
                 </div>
