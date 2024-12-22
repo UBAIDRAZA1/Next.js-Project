@@ -31,20 +31,16 @@ export async function GET() {
       data,
     });
   } catch (error: unknown) {
-    // Handle errors
-    if (error instanceof Error) {
-      // Only access message if error is an instance of Error
-      return NextResponse.json({
-        success: false,
-        message: "An error occurred while fetching data",
-        error: error.message,
-      });
-    }
+    // Handle errors with a fallback for unknown error types
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : "An unknown error occurred while fetching data";
 
-    // If error is not of type Error, handle it generically
     return NextResponse.json({
       success: false,
-      message: "An unknown error occurred",
+      message: "An error occurred while fetching data",
+      error: errorMessage,
     });
   }
 }
